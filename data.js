@@ -121,8 +121,82 @@ icons.forEach((el) => {
 	`
 		<div class="box">
       <i style="color:${el.color};" class="${el.family} ${el.prefix}${el.name}"></i>
-      <h5>${el.name}</h5>
+      <h5 style="text-transform: uppercase;">${el.name}</h5>
     </div>
 	`
 });
 
+
+
+document.getElementById('level').addEventListener("change", (event) => {
+	const level = document.getElementById('level');
+	main.innerHTML = ''; 
+		if(level.value == 1){
+			icons.forEach((el) => {
+			main.innerHTML += 
+			`
+				<div class="box">
+					<i style="color:${el.color};" class="${el.family} ${el.prefix}${el.name}"></i>
+					<h5 style="text-transform: uppercase;">${el.name}</h5>
+				</div>
+			`
+});
+	}
+
+	if(level.value == 2){
+		const animal = icons.filter((el) =>{
+			if(el.type == 'animal') {
+				return true;
+			}
+			return false;
+		});
+		console.log(animal);
+		animal.forEach((el) => {
+			main.innerHTML += 
+			`
+				<div class="box">
+					<i style="color:${el.color};" class="${el.family} ${el.prefix}${el.name}"></i>
+					<h5 style="text-transform: uppercase;">${el.name}</h5>
+				</div>
+			`
+		});
+	}
+
+	if(level.value == 3){
+		const vegetable = icons.filter((el) =>{
+			if(el.type == 'vegetable') {
+				return true;
+			}
+			return false;
+		});
+		console.log(vegetable);
+		vegetable.forEach((el) => {
+			main.innerHTML += 
+			`
+				<div class="box">
+					<i style="color:${el.color};" class="${el.family} ${el.prefix}${el.name}"></i>
+					<h5 style="text-transform: uppercase;">${el.name}</h5>
+				</div>
+			`
+		});
+	}
+
+	if(level.value == 4){
+		const user = icons.filter((el) =>{
+			if(el.type == 'user') {
+				return true;
+			}
+			return false;
+		});
+		console.log(user);
+		user.forEach((el) => {
+			main.innerHTML += 
+			`
+				<div class="box">
+					<i style="color:${el.color};" class="${el.family} ${el.prefix}${el.name}"></i>
+					<h5 style="text-transform: uppercase;">${el.name}</h5>
+				</div>
+			`
+		});
+	}
+});

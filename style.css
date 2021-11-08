@@ -39,6 +39,8 @@ header{
 
 main{
   background-color: #DDDDDD;
+  width: 100%;
+  height: calc(100vh - 70px);
 }
 
 .clearfix::after {
